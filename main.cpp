@@ -144,11 +144,12 @@ bool dfs(int r, int c, const vector<vector<int>>& maze, vector<vector<bool>>& vi
         return true;
     }
 
-    // Checking neighbors
+    // Checking neighbors [4 possible directions, up, right, down, left]
     for (int i = 0; i < 4; i++) {
         int nr = r + dr[i];
         int nc = c + dc[i];
 
+        // Same three checks as before (Out of bounds, wall, visited)
         if (nr < 0 || nr >= N || nc < 0 || nc >= M) {
             continue;
         }
